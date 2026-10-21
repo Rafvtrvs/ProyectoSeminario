@@ -22,7 +22,7 @@ jobs:
 
       # 3. Instalar la herramienta CML en el runner
       - name: Setup CML
-        uses: iterative/setup-cml@v1
+        uses: iterative/setup-cml@v2
 
       # 4. Instalar dependencias, ejecutar entrenamiento y publicar reporte
       - name: Train model & generate CML report
