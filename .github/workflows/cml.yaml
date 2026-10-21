@@ -1,0 +1,42 @@
+name: Entrenamiento de Modelo con CML
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  train-and-report:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Obtener el código fuente del repositorio
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # 2. Configurar el entorno de Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. Instalar la herramienta CML en el runner
+      - name: Setup CML
+        uses: iterative/setup-cml@v1
+
+      # 4. Instalar dependencias, ejecutar entrenamiento y publicar reporte
+      - name: Train model & generate CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          python train.py
+
+          # Ensamblar el reporte en formato Markdown
+          echo "## Reporte Automático de CML" > report.md
+          cat metrics.txt >> report.md
+          echo "### Gráfico de Residuos" >> report.md
+          echo '![](./residuals.png)' >> report.md
+
+          # Publicar el reporte como comentario en el commit o pull request
+          cml comment create report.md
