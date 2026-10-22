@@ -20,9 +20,6 @@ sources:
     map:
       stop: senal_stop
       speedlimit: senal_transito
-      # Ignorar en v1:
-      # crosswalk: null
-      # trafficlight: null
     ignore:
       - crosswalk
       - trafficlight
@@ -31,3 +28,61 @@ sources:
     folder: data/raw/lamp_post
     map:
       "lamp post": poste_luz
+
+  stop:
+    folder: data/raw/stop
+    note: "lisa stop-b7t6s; names ['0','1'] en data.yaml"
+    map:
+      "0": senal_stop
+    ignore:
+      - "1"
+
+  stop_sing:
+    folder: data/raw/stop_sing
+    note: "stop-sign-shg06 (~2645 imgs)"
+    map:
+      "Stop-Sign - v3 2023-05-23 10-52am": senal_stop
+
+  stop_signal:
+    folder: data/raw/stop_signal
+    map:
+      stop: senal_stop
+    ignore:
+      - green
+      - red
+      - semaforo
+
+  traffic_stop:
+    folder: data/raw/traffic_stop
+    note: "traffic-and-road-signs; solo Stop_Sign"
+    map:
+      Stop_Sign: senal_stop
+    ignore:
+      - "-Road narrows on right"
+      - "50 mph speed limit"
+      - "Attention Please-"
+      - "Beware of children"
+      - "CYCLE ROUTE AHEAD WARNING"
+      - "Dangerous Left Curve Ahead"
+      - "Dangerous Rright Curve Ahead"
+      - "End of all speed and passing limits"
+      - "Give Way"
+      - "Go Straight or Turn Right"
+      - "Go straight or turn left"
+      - "Keep-Left"
+      - "Keep-Right"
+      - "Left Zig Zag Traffic"
+      - "No Entry"
+      - "No_Over_Taking"
+      - "Overtaking by trucks is prohibited"
+      - "Pedestrian Crossing"
+      - "Round-About"
+      - "Slippery Road Ahead"
+      - "Speed Limit 20 KMPh"
+      - "Speed Limit 30 KMPh"
+      - "Straight Ahead Only"
+      - "Traffic_signal"
+      - "Truck traffic is prohibited"
+      - "Turn left ahead"
+      - "Turn right ahead"
+      - "Uneven Road"
