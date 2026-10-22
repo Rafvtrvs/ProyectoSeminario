@@ -1,0 +1,27 @@
+# Datasets (no subir a git: son pesados)
+data/raw/
+data/interim/
+data/processed/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Modelos / reportes generados
+*.pt
+*.onnx
+*.tflite
+reports/dataset_check/
+metrics.txt
+residuals.png
+report.md
+
+# IDE / SO
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

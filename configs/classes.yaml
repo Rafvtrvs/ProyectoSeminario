@@ -1,0 +1,33 @@
+# Taxonomía v1 del sistema de asistencia
+# IDs fijos: no reordenar sin regenerar etiquetas
+
+names:
+  0: persona
+  1: poste_luz
+  2: senal_stop
+  3: senal_transito
+
+# Mapeo desde clases originales (nombres exactos de cada data.yaml)
+sources:
+  pedestrian:
+    folder: data/raw/pedestrian
+    note: "Sin carpeta valid/ en el zip; train+test solamente"
+    map:
+      person: persona
+
+  street_signs:
+    folder: data/raw/street_signs
+    map:
+      stop: senal_stop
+      speedlimit: senal_transito
+      # Ignorar en v1:
+      # crosswalk: null
+      # trafficlight: null
+    ignore:
+      - crosswalk
+      - trafficlight
+
+  lamp_post:
+    folder: data/raw/lamp_post
+    map:
+      "lamp post": poste_luz
