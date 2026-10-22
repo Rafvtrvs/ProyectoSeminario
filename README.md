@@ -93,4 +93,4 @@ Los pesos finales no están en GitHub: descárgalos desde Drive (`best.pt` de la
 
 ## Integrantes
 
-Mateo Cortés Medina, Rafael Rodríguez Tovar, Josefa Iturra González.
+Mateo Cortés Medina, Rafael Rodríguez Tovar, Josefa Iturra González, Sergio Villegas.
